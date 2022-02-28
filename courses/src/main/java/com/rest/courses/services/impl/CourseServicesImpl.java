@@ -21,7 +21,7 @@ public class CourseServicesImpl implements CourseServices {
 
     @Override
     public Course saveCourse(Course course) {
-        return courseRepository.save(course);
+        return courseRepository.saveAndFlush(course);
     }
 
     @Override

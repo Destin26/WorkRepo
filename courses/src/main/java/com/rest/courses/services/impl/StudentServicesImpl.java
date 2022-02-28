@@ -1,7 +1,6 @@
 package com.rest.courses.services.impl;
 
 import com.rest.courses.Repository.StudentRepository;
-import com.rest.courses.models.CustomResponses;
 import com.rest.courses.models.Student;
 import com.rest.courses.services.StudentServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +17,9 @@ public class StudentServicesImpl implements StudentServices {
     @Autowired
     StudentRepository studentRepository;
 
-    @Autowired
-    CustomResponses customResponses;
-
     @Override
-    public CustomResponses saveStudent(Student student) {
-        studentRepository.save(student);
-        return new CustomResponses("Save Succesful",SAVE_SUCESS);
+    public Student saveStudent(Student student) {
+        return studentRepository.saveAndFlush(student);
     }
 
     @Override

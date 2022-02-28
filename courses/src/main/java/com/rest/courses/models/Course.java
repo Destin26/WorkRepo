@@ -61,6 +61,16 @@ public class Course {
         this.enrolledStudents = enrolledStudents;
     }
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", courseName='" + courseName + '\'' +
+                ", courseCode=" + courseCode +
+                ", enrolledStudents=" + enrolledStudents +
+                '}';
+    }
+
     public void enrollStudent(Student student) {
         enrolledStudents.add(student);
     }

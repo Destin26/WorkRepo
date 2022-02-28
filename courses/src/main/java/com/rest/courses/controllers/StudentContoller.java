@@ -1,7 +1,6 @@
 package com.rest.courses.controllers;
 
 
-import com.rest.courses.models.CustomResponses;
 import com.rest.courses.models.Student;
 import com.rest.courses.services.StudentServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,8 @@ public class StudentContoller {
     StudentServices studentServices;
 
     @PostMapping("/student/add")
-    public CustomResponses addStudent(@RequestBody Student student){
-        CustomResponses response = studentServices.saveStudent(student);
+    public Student addStudent(@RequestBody Student student){
+        Student response = studentServices.saveStudent(student);
         return response;
     }
 
